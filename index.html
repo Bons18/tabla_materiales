@@ -10,34 +10,34 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="brand-icon">M</div>
+      <div class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M7 7h10M7 12h10M7 17h6"/></svg></div>
       <div>
         <h1>Inventario de Materiales</h1>
         <p>Control de cantidades por responsable</p>
       </div>
     </div>
-    <div class="badge">57 registros</div>
+    <div class="badge"><svg class="icon icon-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M5 7v13h14V7M8 7V4h8v3"/></svg><span>57 registros</span></div>
   </header>
 
   <main class="container">
     <section class="hero">
       <div>
-        <span class="eyebrow">CONTROL DE INVENTARIO</span>
+        <span class="eyebrow"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg> CONTROL DE INVENTARIO</span>
         <h2>Materiales técnicos</h2>
         <p>Consulta rápidamente códigos, materiales y cantidades asignadas.</p>
       </div>
       <div class="stats">
-        <div class="stat"><strong id="visibleCount">57</strong><span>mostrados</span></div>
-        <div class="stat"><strong>5</strong><span>columnas</span></div>
+        <div class="stat"><svg class="stat-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><strong id="visibleCount">57</strong><span>mostrados</span></div>
+        <div class="stat"><svg class="stat-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 4v16"/></svg><strong>5</strong><span>columnas</span></div>
       </div>
     </section>
 
     <section class="toolbar" aria-label="Herramientas de búsqueda">
       <label class="search">
-        <span aria-hidden="true">⌕</span>
+        <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span>
         <input id="searchInput" type="search" placeholder="Buscar por código o nombre del material..." autocomplete="off">
       </label>
-      <button id="clearButton" class="clear-btn" type="button">Limpiar</button>
+      <button id="clearButton" class="clear-btn" type="button"><svg class="icon icon-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v5M14 11v5"/></svg><span>Limpiar</span></button>
     </section>
 
     <section class="table-card">
@@ -45,12 +45,12 @@
         <table id="materialsTable">
           <thead>
             <tr>
-              <th>CÓDIGO</th>
-              <th>MATERIAL</th>
-              <th>TÉCNICOS</th>
-              <th>NODOS</th>
-              <th>SERGIO</th>
-              <th>PALMAS</th>
+              <th><span class="th-content"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>CÓDIGO</span></th>
+              <th><span class="th-content"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7.5 12 3 4 7.5 12 12l8-4.5Z"/><path d="M4 12.5 12 17l8-4.5M4 17.5 12 22l8-4.5"/></svg>MATERIAL</span></th>
+              <th><span class="th-content"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21a6 6 0 0 1 12 0M16 11a4 4 0 0 1 0 8M17 15h4"/></svg>TÉCNICOS</span></th>
+              <th><span class="th-content"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="m12 7 0 5M10.5 13.5 6.5 18M13.5 13.5l4 4.5"/></svg>NODOS</span></th>
+              <th><span class="th-content"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>SERGIO</span></th>
+              <th><span class="th-content"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9M12 9c-4 0-7-2-7-5 4 0 7 1 7 5ZM12 12c4 0 7-2 7-5-4 0-7 1-7 5ZM12 16c-3 0-6-1-8-4 4-1 8 0 8 4Z"/></svg>PALMAS</span></th>
             </tr>
           </thead>
           <tbody><tr><td data-label="CÓDIGO">7</td><td data-label="MATERIAL">ARGOLLA REDONDA</td><td data-label="TÉCNICOS">5</td><td data-label="NODOS">—</td><td data-label="SERGIO">40</td><td data-label="PALMAS">—</td></tr>
@@ -117,7 +117,7 @@
 
 <footer>
       <span>© 2026 Brayan Restrepo Pabon · Todos los derechos sobre el código, diseño y textos originales reservados.</span>
-      <span><a href="terminos-de-uso.html">Términos de uso</a> · <a href="politica-privacidad.html">Política de privacidad</a></span>
+      <span class="footer-links"><a href="terminos-de-uso.html"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Términos de uso</a> · <a href="politica-privacidad.html"><svg class="icon icon-xs" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 2.9 8.5 7 10 4.1-1.5 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>Política de privacidad</a></span>
     </footer>
   </main>
 
