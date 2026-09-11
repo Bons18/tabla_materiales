@@ -33,4 +33,24 @@
     <h2>10. Legislación aplicable</h2><p>El sitio se rige por la legislación colombiana en lo que resulte aplicable. Entre las normas relevantes se encuentran la Ley 23 de 1982 sobre derechos de autor y la Ley 527 de 1999 sobre mensajes de datos y comercio electrónico.</p>
     <p><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3431" target="_blank" rel="noopener noreferrer">Consultar Ley 23 de 1982</a> · <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=4276" target="_blank" rel="noopener noreferrer">Consultar Ley 527 de 1999</a></p>
   </article></main>
+
+<script>
+(function () {
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  }, false);
+
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if (e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['i','j','c'].indexOf(k) !== -1) ||
+        (e.ctrlKey && k === 'u')) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
+})();
+</script>
+
 </body></html>
