@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tabla de materiales técnicos con cantidades por responsable.">
+  <title>Inventario de Materiales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">M</div>
+      <div>
+        <h1>Inventario de Materiales</h1>
+        <p>Control de cantidades por responsable</p>
+      </div>
+    </div>
+    <div class="badge">57 registros</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">CONTROL DE INVENTARIO</span>
+        <h2>Materiales técnicos</h2>
+        <p>Consulta rápidamente códigos, materiales y cantidades asignadas.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong id="visibleCount">57</strong><span>mostrados</span></div>
+        <div class="stat"><strong>5</strong><span>columnas</span></div>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Herramientas de búsqueda">
+      <label class="search">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Buscar por código o nombre del material..." autocomplete="off">
+      </label>
+      <button id="clearButton" class="clear-btn" type="button">Limpiar</button>
+    </section>
+
+    <section class="table-card">
+      <div class="table-wrap">
+        <table id="materialsTable">
+          <thead>
+            <tr>
+              <th>CÓDIGO</th>
+              <th>MATERIAL</th>
+              <th>TÉCNICOS</th>
+              <th>NODOS</th>
+              <th>SERGIO</th>
+              <th>PALMAS</th>
+            </tr>
+          </thead>
+          <tbody><tr><td>7</td><td>ARGOLLA REDONDA</td><td>5</td><td>—</td><td>40</td><td>—</td></tr>
+<tr><td>8</td><td>ARGOLLA TENSORA</td><td>5</td><td>—</td><td>5</td><td>—</td></tr>
+<tr><td>2910</td><td>ATENUADOR DE LINEA 3-DB, TIPO F</td><td>2</td><td>—</td><td>10</td><td>—</td></tr>
+<tr><td>2911</td><td>ATENUADOR DE LINEA 6-DB, TIPO F</td><td>2</td><td>—</td><td>10</td><td>—</td></tr>
+<tr><td>3277</td><td>ATENUADOR DE LINEA 8-DB, TIPO F</td><td>2</td><td>—</td><td>10</td><td>—</td></tr>
+<tr><td>10005115</td><td>ATENUADOR FPA DE 3 DBM</td><td>2</td><td>—</td><td>10</td><td>—</td></tr>
+<tr><td>10005116</td><td>ATENUADOR FPA DE 6 DBM</td><td>2</td><td>—</td><td>10</td><td>—</td></tr>
+<tr><td>10</td><td>BUJE PLASTICO (CHUPO) BLANCO</td><td>20</td><td>—</td><td>200</td><td>—</td></tr>
+<tr><td>11</td><td>BUJE PLASTICO (CHUPO) NEGRO</td><td>20</td><td>—</td><td>100</td><td>—</td></tr>
+<tr><td>10001383</td><td>CABLE COAXIAL 60% NEGRO</td><td>155</td><td>—</td><td>1050</td><td>—</td></tr>
+<tr><td>10000680</td><td>CABLE COAXIAL 60% BLANCO</td><td>155</td><td>—</td><td>3050</td><td>—</td></tr>
+<tr><td>10000405</td><td>CABLE COAXIAL RG-11 S-M</td><td>60</td><td>—</td><td>120</td><td>—</td></tr>
+<tr><td>10003733</td><td>CABLE F.O 1H DROP G.657A2</td><td>350</td><td>—</td><td>2000</td><td>700</td></tr>
+<tr><td>10002117</td><td>CABLE UTP CATEGORIA 5E</td><td>55</td><td>—</td><td>400</td><td>100</td></tr>
+<tr><td>502</td><td>CANALETA PLASTICA 10X10X2</td><td>10</td><td>—</td><td>60</td><td>20</td></tr>
+<tr><td>10000985</td><td>CANDADO ANTIFRAUDE</td><td>50</td><td>50</td><td>0</td><td>—</td></tr>
+<tr><td>18</td><td>CHAZOS PLASTICOS 3/8 PULGADA</td><td>10</td><td>—</td><td>20</td><td>—</td></tr>
+<tr><td>17060</td><td>CIERRE LINEAL GPON FO1H-DROP</td><td>1</td><td>—</td><td>3</td><td>2</td></tr>
+<tr><td>20</td><td>CINTA AISLANTE 3MM</td><td>1</td><td>—</td><td>5</td><td>—</td></tr>
+<tr><td>7140</td><td>CINTA DE ENMASCARAR</td><td>1</td><td>—</td><td>5</td><td>—</td></tr>
+<tr><td>10003416</td><td>CONECTOR ANTI-HUMEDAD RG-6</td><td>10</td><td>50</td><td>60</td><td>—</td></tr>
+<tr><td>10004883</td><td>CONECTOR CONTINUIDAD RG-11</td><td>2</td><td>10</td><td>4</td><td>—</td></tr>
+<tr><td>10003415</td><td>CONECTOR DE CONTINUIDAD RG-6</td><td>60</td><td>40</td><td>800</td><td>—</td></tr>
+<tr><td>10001459</td><td>CONECTOR OPTICO MECANICO</td><td>6</td><td>—</td><td>60</td><td>10</td></tr>
+<tr><td>27</td><td>CONECTOR RJ-11</td><td>10</td><td>—</td><td>0</td><td>—</td></tr>
+<tr><td>10001695</td><td>CONECTOR RJ-45</td><td>6</td><td>—</td><td>60</td><td>10</td></tr>
+<tr><td>26118</td><td>CONTROL REM SOLUTION SERIES 4</td><td>1</td><td>—</td><td>SEGÚN EQUIPOS</td><td>—</td></tr>
+<tr><td>26769</td><td>CONTROL REM. ANYCON KAON NUEVO</td><td>10</td><td>—</td><td>SEGÚN EQUIPOS</td><td>—</td></tr>
+<tr><td>26770</td><td>CONTROL REMOTO ANYCON UNIVERSAL</td><td>10</td><td>—</td><td>SEGÚN EQUIPOS</td><td>—</td></tr>
+<tr><td>26732</td><td>CONTROL REMOTO ANDROID</td><td>4</td><td>—</td><td>SEGÚN EQUIPOS</td><td>—</td></tr>
+<tr><td>26117</td><td>CONTROL REMSOLUTION SERIES 5</td><td>1</td><td>—</td><td>SEGÚN EQUIPOS</td><td>—</td></tr>
+<tr><td>1203</td><td>CORREA DE IDENTIFICACION ROJA</td><td>5</td><td>—</td><td>20</td><td>—</td></tr>
+<tr><td>1202</td><td>CORREA IDENTIFICACION AZUL</td><td>15</td><td>50</td><td>100</td><td>—</td></tr>
+<tr><td>1207</td><td>CORREA DE MARCACION NARANJA</td><td>5</td><td>—</td><td>10</td><td>—</td></tr>
+<tr><td>33</td><td>CORREAS AMARRE PLASTICO 20 CMS</td><td>200</td><td>200</td><td>500</td><td>—</td></tr>
+<tr><td>10000484</td><td>FILTRO P ALT_BANDA RECHAZ 5_42</td><td>8</td><td>—</td><td>100</td><td>—</td></tr>
+<tr><td>38</td><td>GANCHOS AUTOSUSPENDIDOS</td><td>10</td><td>—</td><td>20</td><td>—</td></tr>
+<tr><td>42</td><td>GRAPA PLASTICA BLANCA RG-6</td><td>400</td><td>—</td><td>2000</td><td>—</td></tr>
+<tr><td>43</td><td>GRAPA PLASTICA NEGRA RG-6</td><td>400</td><td>—</td><td>1000</td><td>—</td></tr>
+<tr><td>68</td><td>GRAPA UTP</td><td>200</td><td>—</td><td>600</td><td>—</td></tr>
+<tr><td>113</td><td>HEBILLA BANDIT 1/2</td><td>10</td><td>—</td><td>0</td><td>—</td></tr>
+<tr><td>23020</td><td>HEBILLA BANDIT 5/8</td><td>10</td><td>—</td><td>0</td><td>—</td></tr>
+<tr><td>44</td><td>HERRAJE PIG-TAIL GALVANIZADO</td><td>5</td><td>—</td><td>20</td><td>—</td></tr>
+<tr><td>10009836</td><td>HERRAJE TENSOR CABLE DROP GPON</td><td>10</td><td>—</td><td>100</td><td>25</td></tr>
+<tr><td>112</td><td>ROLLO CINTA BANDIT DE 1/2</td><td>30</td><td>—</td><td>0</td><td>—</td></tr>
+<tr><td>14</td><td>ROLLO CINTA BANDIT DE 5/8</td><td>30</td><td>—</td><td>0</td><td>—</td></tr>
+<tr><td>51</td><td>SOPORTE DE DISTRIBUCION</td><td>10</td><td>—</td><td>0</td><td>—</td></tr>
+<tr><td>10003441</td><td>SPLITTER 2 VIAS INT.</td><td>5</td><td>10</td><td>50</td><td>—</td></tr>
+<tr><td>10003442</td><td>SPLITTER 3 VIAS INT.</td><td>5</td><td>5</td><td>25</td><td>—</td></tr>
+<tr><td>10003439</td><td>SPLITTER 4 VIAS INTERIOR</td><td>1</td><td>—</td><td>3</td><td>—</td></tr>
+<tr><td>9250</td><td>STICKER WIFI</td><td>10</td><td>—</td><td>150</td><td>—</td></tr>
+<tr><td>57</td><td>TENSOR PLASTICO RG-6</td><td>10</td><td>—</td><td>50</td><td>—</td></tr>
+<tr><td>56</td><td>TENSOR RG-11</td><td>5</td><td>—</td><td>10</td><td>—</td></tr>
+<tr><td>10001450</td><td>TOMA OPTICA(ROSETA)GPON</td><td>3</td><td>—</td><td>20</td><td>4</td></tr>
+<tr><td>87</td><td>UNION INDOOR</td><td>5</td><td>—</td><td>15</td><td>—</td></tr>
+<tr><td>4802</td><td>FUENTE PODER PARA STB 12V 2.5 AMP</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>7747</td><td>FUENTE PODER PARA STB 12V 21.0 AMP</td><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody>
+        </table>
+      </div>
+      <div id="emptyState" class="empty" hidden>No se encontraron materiales con esa búsqueda.</div>
+    </section>
+
+<footer>
+      <span>© 2026 Brayan Restrepo Pabon · Todos los derechos sobre el código, diseño y textos originales reservados.</span>
+      <span><a href="terminos-de-uso.html">Términos de uso</a> · <a href="politica-privacidad.html">Política de privacidad</a></span>
+    </footer>
+  </main>
+
+  <script>
+    const input = document.getElementById("searchInput");
+    const clearButton = document.getElementById("clearButton");
+    const rows = [...document.querySelectorAll("#materialsTable tbody tr")];
+    const visibleCount = document.getElementById("visibleCount");
+    const emptyState = document.getElementById("emptyState");
+
+    function normalizeText(value) {
+      return String(value ?? "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ");
+    }
+
+    function filterRows() {
+      const term = normalizeText(input.value);
+      let count = 0;
+
+      rows.forEach(row => {
+        const code = normalizeText(row.cells[0]?.textContent);
+        const material = normalizeText(row.cells[1]?.textContent);
+
+        // Busca por código completo/parcial o por cualquier parte del nombre.
+        const matches = term === "" || code.includes(term) || material.includes(term);
+        row.hidden = !matches;
+        if (matches) count++;
+      });
+
+      visibleCount.textContent = count;
+      emptyState.hidden = count !== 0;
+    }
+
+    input.addEventListener("input", filterRows);
+
+    clearButton.addEventListener("click", () => {
+      input.value = "";
+      filterRows();
+      input.focus();
+    });
+  </script>
+</body>
+</html>
