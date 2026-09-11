@@ -146,7 +146,7 @@
 
         // Busca por código completo/parcial o por cualquier parte del nombre.
         const matches = term === "" || code.includes(term) || material.includes(term);
-        row.hidden = !matches;
+        row.style.display = matches ? '' : 'none';
         if (matches) count++;
       });
 
@@ -171,10 +171,10 @@
 
   if (!searchInput || !table) return;
 
-  const rows = Array.from(table.querySelectorAll('tbody tr'));
+  const highlightRows = Array.from(table.querySelectorAll('tbody tr'));
   const originals = new Map();
 
-  rows.forEach(row => {
+  highlightRows.forEach(row => {
     row.querySelectorAll('td').forEach(cell => {
       originals.set(cell, cell.innerHTML);
     });
@@ -266,7 +266,7 @@
 
   function updateHighlight() {
     const query = searchInput.value.trim();
-    rows.forEach(row => {
+    highlightRows.forEach(row => {
       // Highlight only the searchable columns: CÓDIGO and MATERIAL.
       const cells = row.querySelectorAll('td');
       cells.forEach((cell, index) => {
