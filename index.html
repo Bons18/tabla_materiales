@@ -283,25 +283,5 @@
 })();
 </script>
 
-
-<script>
-(function () {
-  document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-  }, false);
-
-  document.addEventListener('keydown', function (e) {
-    var k = (e.key || '').toLowerCase();
-    if (e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && ['i','j','c'].indexOf(k) !== -1) ||
-        (e.ctrlKey && k === 'u')) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-  }, true);
-})();
-</script>
-
 </body>
 </html>
