@@ -162,7 +162,7 @@
       input.focus();
     });
   </script>
-<script>document.querySelectorAll('.copy-code').forEach(btn=>btn.addEventListener('click',async()=>{const code=btn.closest('.code-cell').querySelector('.code-value').textContent.trim();try{await navigator.clipboard.writeText(code);btn.classList.add('copied');btn.title='¡Copiado!';setTimeout(()=>{btn.classList.remove('copied');btn.title='Copiar código'},1200)}catch(e){}}));</script>
+
 <script>
 (function () {
   const searchInput =
@@ -280,6 +280,57 @@
   // Also catch search implementations that change the input programmatically.
   const observer = new MutationObserver(updateHighlight);
   observer.observe(searchInput, { attributes: true, attributeFilter: ['value'] });
+})();
+</script>
+
+
+<script>
+(function () {
+  const table = document.getElementById('materialsTable');
+  if (!table) return;
+
+  table.addEventListener('click', async function (event) {
+    const button = event.target.closest('.copy-code');
+    if (!button || !table.contains(button)) return;
+
+    const cell = button.closest('.code-cell');
+    const value = cell && cell.querySelector('.code-value');
+    if (!value) return;
+
+    const code = value.textContent.trim();
+
+    try {
+      await navigator.clipboard.writeText(code);
+      button.classList.add('copied');
+      button.title = '¡Copiado!';
+      button.setAttribute('aria-label', '¡Copiado!');
+      setTimeout(function () {
+        button.classList.remove('copied');
+        button.title = 'Copiar código';
+        button.setAttribute('aria-label', 'Copiar código');
+      }, 1200);
+    } catch (error) {
+      // Fallback for browsers/contexts where Clipboard API is unavailable.
+      const textarea = document.createElement('textarea');
+      textarea.value = code;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        button.classList.add('copied');
+        button.title = '¡Copiado!';
+        setTimeout(function () {
+          button.classList.remove('copied');
+          button.title = 'Copiar código';
+        }, 1200);
+      } finally {
+        textarea.remove();
+      }
+    }
+  });
 })();
 </script>
 
