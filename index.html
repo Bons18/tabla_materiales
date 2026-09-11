@@ -162,5 +162,126 @@
       input.focus();
     });
   </script>
-<script>document.querySelectorAll('.copy-code').forEach(btn=>btn.addEventListener('click',async()=>{const code=btn.closest('.code-cell').querySelector('.code-value').textContent.trim();try{await navigator.clipboard.writeText(code);btn.classList.add('copied');btn.title='¡Copiado!';setTimeout(()=>{btn.classList.remove('copied');btn.title='Copiar código'},1200)}catch(e){}}));</script></body>
+<script>document.querySelectorAll('.copy-code').forEach(btn=>btn.addEventListener('click',async()=>{const code=btn.closest('.code-cell').querySelector('.code-value').textContent.trim();try{await navigator.clipboard.writeText(code);btn.classList.add('copied');btn.title='¡Copiado!';setTimeout(()=>{btn.classList.remove('copied');btn.title='Copiar código'},1200)}catch(e){}}));</script>
+<script>
+(function () {
+  const searchInput =
+    document.querySelector('#searchInput, input[type="search"], input[placeholder*="Buscar"], input[placeholder*="buscar"]');
+  const table = document.querySelector('table');
+
+  if (!searchInput || !table) return;
+
+  const rows = Array.from(table.querySelectorAll('tbody tr'));
+  const originals = new Map();
+
+  rows.forEach(row => {
+    row.querySelectorAll('td').forEach(cell => {
+      originals.set(cell, cell.innerHTML);
+    });
+  });
+
+  function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function normalize(value) {
+    return value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  function highlightCell(cell, query) {
+    const original = originals.get(cell);
+    if (original === undefined) return;
+
+    cell.innerHTML = original;
+
+    if (!query) return;
+
+    // Only highlight visible text nodes; keep buttons/SVGs and markup intact.
+    const normalizedQuery = normalize(query);
+    if (!normalizedQuery) return;
+
+    const walker = document.createTreeWalker(
+      cell,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          if (node.parentElement && node.parentElement.closest('button')) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) textNodes.push(node);
+
+    textNodes.forEach(textNode => {
+      const text = textNode.nodeValue;
+      const normalizedText = normalize(text);
+
+      // Find every occurrence while allowing accent differences.
+      const parts = [];
+      let cursor = 0;
+      let pos = normalizedText.indexOf(normalizedQuery, cursor);
+
+      while (pos !== -1) {
+        parts.push({ start: pos, end: pos + normalizedQuery.length });
+        cursor = pos + normalizedQuery.length;
+        pos = normalizedText.indexOf(normalizedQuery, cursor);
+      }
+
+      if (!parts.length) return;
+
+      // Map normalized character positions back to original text positions.
+      const map = [];
+      for (let i = 0; i < text.length; i++) {
+        const chars = text[i].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        for (let j = 0; j < chars.length; j++) map.push(i);
+      }
+
+      const fragment = document.createDocumentFragment();
+      let last = 0;
+
+      parts.forEach(part => {
+        const start = map[part.start];
+        const end = (map[part.end - 1] ?? start) + 1;
+
+        if (start > last) fragment.appendChild(document.createTextNode(text.slice(last, start)));
+
+        const mark = document.createElement('mark');
+        mark.className = 'search-highlight';
+        mark.textContent = text.slice(start, end);
+        fragment.appendChild(mark);
+        last = end;
+      });
+
+      if (last < text.length) fragment.appendChild(document.createTextNode(text.slice(last)));
+      textNode.parentNode.replaceChild(fragment, textNode);
+    });
+  }
+
+  function updateHighlight() {
+    const query = searchInput.value.trim();
+    rows.forEach(row => {
+      // Highlight only the searchable columns: CÓDIGO and MATERIAL.
+      const cells = row.querySelectorAll('td');
+      cells.forEach((cell, index) => {
+        if (index === 0 || index === 1) highlightCell(cell, query);
+      });
+    });
+  }
+
+  searchInput.addEventListener('input', updateHighlight);
+
+  // Also catch search implementations that change the input programmatically.
+  const observer = new MutationObserver(updateHighlight);
+  observer.observe(searchInput, { attributes: true, attributeFilter: ['value'] });
+})();
+</script>
+
+</body>
 </html>

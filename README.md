@@ -23,3 +23,9 @@ En Vercel, importa este proyecto como sitio estático. No requiere framework ni 
 ## Alcance de los derechos
 
 El sitio concede a los visitantes únicamente el derecho limitado de acceder y utilizar sus servicios y funcionalidades de forma lícita. No se concede propiedad ni una licencia general sobre el código, diseño, interfaz o textos originales. Los derechos de terceros sobre sus marcas, nombres, códigos o contenidos permanecen con sus respectivos titulares.
+
+## Seguridad
+
+Se incorporaron headers de seguridad para el despliegue en Vercel, incluyendo CSP, HSTS, protección contra clickjacking, MIME sniffing, política de referencia y restricciones de permisos del navegador.
+
+La configuración no intenta ocultar el código fuente: en una web estática el navegador necesariamente recibe HTML, CSS y JavaScript. La protección se enfoca en reducir vectores de ataque y evitar configuraciones inseguras.
