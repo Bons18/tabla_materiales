@@ -5,8 +5,8 @@ Proyecto estático listo para desplegar en Vercel.
 ## Contenido
 - `index.html`: inventario con 57 materiales, búsqueda por código o nombre y orden original de la hoja.
 - `style.css`: diseño responsive.
-- `terminos.html`: términos de uso.
-- `politica.html`: política de privacidad y tratamiento de datos.
+- `/terminos/`: términos de uso.
+- `/politica/`: política de privacidad y tratamiento de datos.
 
 ## Titular
 Brayan Restrepo Pabon.
