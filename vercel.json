@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/politica",
+      "destination": "/politica.html"
+    },
+    {
+      "source": "/politica/",
+      "destination": "/politica.html"
+    },
+    {
+      "source": "/terminos",
+      "destination": "/terminos.html"
+    },
+    {
+      "source": "/terminos/",
+      "destination": "/terminos.html"
+    }
+  ]
+}
