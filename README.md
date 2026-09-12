@@ -3,7 +3,7 @@
 Proyecto estático listo para desplegar en Vercel.
 
 ## Contenido
-- `index.html`: inventario con 57 materiales, búsqueda por código o nombre y orden original de la hoja.
+- `index.html`: inventario con 58 materiales, búsqueda por código o nombre, resaltado de coincidencias, botón para copiar cada código (con notificación) y orden original de la hoja.
 - `style.css`: diseño responsive.
 - `/terminos/`: términos de uso.
 - `/politica/`: política de privacidad y tratamiento de datos.
